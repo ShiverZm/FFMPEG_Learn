@@ -1,17 +1,17 @@
-project (ffmpeg_play_h264)
+project (ffmpeg_play_yuv)
 
 ADD_DEFINITIONS(-DUNICODE -D_UNICODE)
 
 #include header_files
 SET(SDL_INCLUDE ${PROJECT_SOURCE_DIR}/../lib/SDL2-2.0.9/)
 SET(EXTERN_INCLUDE ${PROJECT_SOURCE_DIR}/../include/)
-SET(FFMPEG_INCLUDE ${PROJECT_SOURCE_DIR}/../lib/ffmpeg/include)
+SET(FFMPEG_INCLUDE ${PROJECT_SOURCE_DIR}/../lib/ffmpeg-win64-gpl-shared-4.4/include)
 
 INCLUDE_DIRECTORIES (${SDL_INCLUDE} ${EXTERN_INCLUDE} ${SDL_TTF_INCLUDE} ${FFMPEG_INCLUDE})
 
 #lib 
 
-SET(FFMPGE_LIB ${PROJECT_SOURCE_DIR}/../lib/ffmpeg/lib)
+SET(FFMPGE_LIB ${PROJECT_SOURCE_DIR}/../lib/ffmpeg-win64-gpl-shared-4.4/lib)
 
 IF(WIN32)
 	SET(SDL_LIB ${PROJECT_SOURCE_DIR}/../lib/SDL2-2.0.9/lib/x86 ${PROJECT_SOURCE_DIR}/../lib/SDL2_ttf-devel-2.0.15-VC/SDL2_ttf-2.0.15/lib/x86)
@@ -30,6 +30,6 @@ LINK_LIBRARIES(SDL2 SDL2main SDL2test SDL2_image SDL2_ttf avcodec.lib avdevice.l
 FILE (GLOB header_files *.h)
 FILE (GLOB source_files *.c *.cpp)
 
-ADD_EXECUTABLE (ffmpeg_play_h264 ${header_files} ${source_files})
+ADD_EXECUTABLE (ffmpeg_play_yuv ${header_files} ${source_files})
 
-TARGET_LINK_LIBRARIES (ffmpeg_play_h264)
+TARGET_LINK_LIBRARIES (ffmpeg_play_yuv)

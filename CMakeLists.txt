@@ -12,3 +12,4 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/../bin)
 INCLUDE (globalsetting)
 
 add_subdirectory(01ffmpeg_learn)
+add_subdirectory(02ffmpeg_learn)
